@@ -5,8 +5,7 @@ const router = Router();
 const { Op, Sequelize } =  require("sequelize");
 
 const { Country, Activity } = require("../db.js");
-// const { getCountries } = require("../controllers/Controllers.js");
-// const { getTypes} = require("../controllers/types.js");
+
 // const { validatorUUIDV4 } = require("../controllers/validator.js");
 
 router.get("/", async (req, res, next) => {
