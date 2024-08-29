@@ -7,7 +7,7 @@ const {
 } = process.env;
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-const sequelize = new Sequelize(`${DB_HOST}`, {
+const sequelize = new Sequelize(`${DB_HOST}?ssl=true`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   dialectModule: require('pg')
