@@ -25,7 +25,7 @@ require('dotenv').config();
 const port = process.env.PORT || 3001; // puerto por defecto postgres
 
 // Syncing all the models at once.
-conn.sync({ alter: true }).then(() => {
+conn.sync({ alter: false }).then(() => {
   server.listen(port, () => {
     console.log(`%s listening at ${port}`); // eslint-disable-line no-console
   });
