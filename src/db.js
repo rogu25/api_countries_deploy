@@ -3,11 +3,11 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE, DATABASE_URL
+  POSTGRES_USER, POSTGRES_PASSWORD, PGHOST, POSTGRES_DB
 } = process.env;
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_DATABASE}`, {
+const sequelize = new Sequelize(`postgresql://${POSTGRES_USER}:${encodeURIComponent(POSTGRES_PASSWORD)}@autorack.proxy.rlwy.net:42779/${POSTGRES_DB}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   dialectModule: require('pg')
